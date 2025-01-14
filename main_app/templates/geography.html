@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %} 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>География</title>
+</head>
+<body>
+  <div style="display: flex; flex-direction: row;">
+    <div>
+      <nav style="background-color: rgba(51, 97, 137, 1); width: 274px; padding-top: 32px; height: 1598px;">
+        <span style="color: rgba(228, 241, 255, 1); font-size: 32px; font-weight: 500; margin: 31px 97px 32px 84px;">Меню</span>
+        <ul style="margin: 31px 0px 0px 0px; list-style: none; display: flex; flex-direction: column; height: 329px; justify-content: space-between; padding-left: 23px;">
+          <li><a href="/" style="font-size: 24px; font-weight: 400;  text-decoration: none; color:rgba(228, 241, 255, 1);">Главная</a></li>
+          <li><a href="/all/" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">Статистика</a></li>
+          <li><a href="/trends/" style="font-size: 24px; font-weight: 400; text-decoration: none;  color:rgba(228, 241, 255, 1);">Востребованность</a></li>
+          <li><a href="{% url 'geography' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">География</a></li>
+          <li><a href="{% url 'abilitys' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">Навыки</a></li>
+          <li><a href="{% url 'real_vac' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">Последние вакансии</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div style="display: flex; flex-direction: column;">
+      <header style="background-color: rgba(233, 149, 65, 1); padding: 0px 40px; margin: 0px;">
+        <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
+          <img src ="{% static 'img/logo.png' %}" alt="логотип" width="60px" height="55px"/>    
+          <h1 style="color: rgba(51, 97, 137, 1); font-size: 40px; font-weight: 700;">QA analytics</h1>
+        </div>
+      </header>
+      <main style="background-color: rgba(228, 241, 255, 1);">
+        <h1 style="color: rgba(51, 97, 137, 1); margin: 19px 500px; font-size: 40px; font-weight: 600;">География</h1>
+        <div style="display: flex; flex-wrap: wrap;">
+            <div>
+                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 420px">Уровень зарплат по городам</h2>
+                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 30px;">
+                    <img src="{% static 'analytic_for_QA/salary_level_by_city.png' %}" alt="Уровень зарплат по городам" width="700px" height="500px">
+                    <iframe src="{% static 'analytic_for_QA/salary_level_by_city.html' %}" style="border:none; height: auto; width: 380px"></iframe>
+                </div>
+            </div>
+            <div>
+                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 420px">Доля вакансий по городам</h2>
+                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 30px; margin-bottom: 60px;">
+                    <img src="{% static 'analytic_for_QA/dolya_of_vac_by_city.png' %}" alt="Доля вакансий по городам" width="700px">
+                    <iframe src="{% static 'analytic_for_QA/dolya_of_vac_by_city.html' %}" style="border:none; height: auto; width: 380px"></iframe>
+                </div>
+            </div>
+        </div>
+      </main>
+      <footer style="background-color: rgba(233, 149, 65, 1); padding: 18px 19px 17px 0px; margin: 0px;">
+        <div style="text-align: end; color: rgba(51, 97, 137, 1)">
+          <div style="font-size: 20px; font-weight: 500;">Яковлева Александра Витальевна</div>
+          <div style="font-size: 20px; font-weight: 500;">Группа: РИ-230931</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>
