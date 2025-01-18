@@ -5,79 +5,691 @@
   <meta charset="UTF-8">
   <title>Общая статистика</title>
 </head>
-<body>
+<body style="margin: 0px;">
   <div style="display: flex; flex-direction: row;">
     <div>
-      <nav style="background-color: rgba(51, 97, 137, 1); width: 274px; padding-top: 32px; height: 3963px;">
-        <span style="color: rgba(228, 241, 255, 1); font-size: 32px; font-weight: 500; margin: 31px 97px 32px 84px;">Меню</span>
+      <nav style="background-color: rgba(140, 162, 115, 1); width: 274px; padding-top: 32px; height: 3777px;">
+        <span style="color: rgba(254, 247, 232, 1); font-size: 32px; font-weight: 500; margin: 31px 97px 32px 84px;">Меню</span>
         <ul style="margin: 31px 0px 0px 0px; list-style: none; display: flex; flex-direction: column; height: 329px; justify-content: space-between; padding-left: 23px;">
-          <li><a href="/" style="font-size: 24px; font-weight: 400;  text-decoration: none; color:rgba(228, 241, 255, 1);">Главная</a></li>
-          <li><a href="/all/" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">Статистика</a></li>
-          <li><a href="/trends/" style="font-size: 24px; font-weight: 400; text-decoration: none;  color:rgba(228, 241, 255, 1);">Востребованность</a></li>
-          <li><a href="{% url 'geography' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">География</a></li>
-          <li><a href="{% url 'abilitys' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">Навыки</a></li>
-          <li><a href="{% url 'real_vac' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(228, 241, 255, 1);">Последние вакансии</a></li>
+          <li><a href="/" style="font-size: 24px; font-weight: 400;  text-decoration: none; color:rgba(254, 247, 232, 1);">Главная</a></li>
+          <li><a href="/all/" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(254, 247, 232, 1);">Статистика</a></li>
+          <li><a href="/trends/" style="font-size: 24px; font-weight: 400; text-decoration: none;  color:rgba(254, 247, 232, 1);">Востребованность</a></li>
+          <li><a href="{% url 'geography' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(254, 247, 232, 1);">География</a></li>
+          <li><a href="{% url 'abilitys' %}" style="font-size: 24px; font-weight: 400; text-decoration: none; color:rgba(254, 247, 232, 1);">Навыки</a></li>
         </ul>
       </nav>
     </div>
     <div style="display: flex; flex-direction: column;">
-      <header style="background-color: rgba(233, 149, 65, 1); padding: 0px 40px; margin: 0px;">
+      <header style="background-color: rgba(241, 169, 183, 1); padding: 0px 40px; margin: 0px;">
         <div style="display: flex; width: 100%; justify-content: space-between; align-items: center;">
           <img src ="{% static 'img/logo.png' %}" alt="логотип" width="60px" height="55px"/>    
-          <h1 style="color: rgba(51, 97, 137, 1); font-size: 40px; font-weight: 700;">QA analytics</h1>
+          <h1 style="color: rgba(192, 63, 104, 1); font-size: 48px; font-weight: 700;">QA analytics</h1>
         </div>
       </header>
-      <main style="background-color: rgba(228, 241, 255, 1);">
-        <h1 style="color: rgba(51, 97, 137, 1); margin: 19px 400px; font-size: 40px; font-weight: 600;">Общая статистика</h1>
+      <main style="background-color: rgba(254, 247, 232, 1)">
+        <h1 style="color: rgba(140, 162, 115, 1); margin: 24px 450px; font-size: 44px; font-weight: 500;">Общая статистика</h1>
         <div class="container" style="display: flex; flex-wrap: wrap;">
             <div>
-                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 320px">Динамика уровня зарплат по годам</h2>
-                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 30px;">
+                <h2 style="color: rgba(192, 63, 104, 1); margin: 37px auto 22px 64px; font-size: 32px; font-weight: 600;">Динамика уровня зарплат по годам</h2>
+                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 64px;">
                     <img src="{% static 'analytic_for_all/salary_level_by_year_general.png' %}" alt="Динамика зарплат" width="700px" height="518px">
-                    <iframe src="{% static 'analytic_for_all/salary_level_by_year_general.html' %}" style="border:none; height: auto;"></iframe>
+                    <table style="border: 2px solid #C03F68; border-collapse: collapse; color:#C03F68">
+                      <thead style="border: 2px solid #C03F68; background-color: rgba(241, 169, 183, 0.7);">
+                          <tr>
+                              <th style="width: 100px; font-weight: 600; border: 2px solid #C03F68;">Год</th>
+                              <th style="width: 200px; font-weight: 600;">Средняя зарплата</th>
+                          </tr>
+                      </thead>
+                      <tbody style="border: 2px solid #C03F68; background-color: #FEF7E8;">
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2005</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">153117</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2006</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">153085</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2007</th>
+                              <td style="font-weight: 300;border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">165133</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2008</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">118105</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2009</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">64599</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2010</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">56347</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2011</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">61180</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2012</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">57649</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2013</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">63528</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2014</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">56460</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2015</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">56200</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2016</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">67315</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2017</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">67329</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2018</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">77627</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2019</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">77814</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2020</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">77952</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2021</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">145670</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2022</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">98731</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68;">2023</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">99540</td>
+                          </tr>
+                          <tr style="text-align: center;">
+                              <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">2024</th>
+                              <td style="font-weight: 300; border: 2px solid #C03F68;">109468</td>
+                          </tr>
+                      </tbody>
+                    </table>
                 </div>
             </div>
             <div>
-                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 320px">Динамика количества вакансий по годам</h2>
-                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 30px;">
+                <h2 style="color: rgba(192, 63, 104, 1); margin: 37px auto 22px 64px; font-size: 32px; font-weight: 600;">Динамика количества вакансий по годам</h2>
+                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 64px;">
                     <img src="{% static 'analytic_for_all/num_of_vac_by_year_general.png' %}" alt="Динамика вакансий" width="700px"  height="518px">
-                    <iframe src="{% static 'analytic_for_all/num_of_vac_by_year_general.html' %}" style="border:none; height: auto;"></iframe>
+                    <table style="border: 2px solid #C03F68; border-collapse: collapse; color: #C03F68;">
+                      <thead style="border: 2px solid #C03F68; background-color: rgba(241, 169, 183, 0.7);">
+                        <tr>
+                          <th style="width: 100px; font-weight: 600; border: 2px solid #C03F68;">Год</th>
+                          <th style="width: 200px; font-weight: 600; border: 2px solid #C03F68;">Количество вакансий</th>
+                        </tr>
+                      </thead>
+                      <tbody style="border: 2px solid #C03F68; background-color: #FEF7E8;">
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2005</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">1836</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2006</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">16229</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2007</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">24000</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2008</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">30627</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2009</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">20989</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2010</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">31930</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2011</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">42282</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2012</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">49309</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2013</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">68149</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2014</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">75828</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2015</td>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">78934</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2016</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">85740</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2017</td>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">95811</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2018</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">149308</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2019</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">144260</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2020</td>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">144260</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2021</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">216285</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2022</td>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">212634</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">2023</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">147000</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">2024</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">96735</td>
+                        </tr>
+                      </tbody>
+                    </table>
                 </div>
             </div>
             <div>
-                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 420px">Уровень зарплат по городам</h2>
-                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 30px;">
+                <h2 style="color: rgba(192, 63, 104, 1); margin: 37px auto 22px 64px; font-size: 32px; font-weight: 600;">Уровень зарплат по городам</h2>
+                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 64px;">
                     <img src="{% static 'analytic_for_all/salary_level_by_city_general.png' %}" alt="Уровень зарплат по городам" width="700px" height="446px">
-                    <iframe src="{% static 'analytic_for_all/salary_level_by_city_general.html' %}" style="border:none; height: auto;"></iframe>
+                    <table style="border: 2px solid #C03F68; border-collapse: collapse; color: #C03F68;">
+                      <thead style="border: 2px solid #C03F68; background-color: rgba(241, 169, 183, 0.7);">
+                        <tr>
+                          <th style="width: 150px; font-weight: 600; border: 2px solid #C03F68;">Город</th>
+                          <th style="width: 150px; font-weight: 600; border: 2px solid #C03F68;">Уровень зарплат</th>
+                        </tr>
+                      </thead>
+                      <tbody style="border: 2px solid #C03F68; background-color: #FEF7E8;">
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Москва</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">110235</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Минск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">102546</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Санкт-Петербург</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">91915</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Новосибирск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">85362</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Екатеринбург</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">81455</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Казань</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">72868</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Нижний Новгород</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">69073</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Самара</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; ">67633</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Краснодар</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">67197</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Алматы</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">65689</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Челябинск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">64299</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Уфа</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">62750</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Красноярск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">60552</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Пермь</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">60204</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68;">Воронеж</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">59963</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3)">Ростов-На-Дону</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">59061</td>
+                        </tr>
+                      </tbody>
+                    </table>                    
                 </div>
             </div>
             <div>
-                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 420px">Доля вакансий по городам</h2>
-                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 30px;">
+                <h2 style="color: rgba(192, 63, 104, 1); margin: 37px auto 22px 64px; font-size: 32px; font-weight: 600;">Доля вакансий по городам</h2>
+                <div style="display: flex; justify-content: space-between; width: 1120px; margin-left: 64px;">
                     <img src="{% static 'analytic_for_all/dolya_of_vac_by_city_general.png' %}" alt="Доля вакансий по городам" width="700px"  height="446px">
-                    <iframe src="{% static 'analytic_for_all/dolya_of_vac_by_city_general.html' %}" style="border:none; height: auto;"></iframe>
+                    <table style="border: 2px solid #C03F68; border-collapse: collapse; color: #C03F68;">
+                      <thead style="border: 2px solid #C03F68; background-color: rgba(241, 169, 183, 0.7);">
+                        <tr>
+                          <th style="width: 150px; font-weight: 600; border: 2px solid #C03F68;">Город</th>
+                          <th style="width: 150px; font-weight: 600; border: 2px solid #C03F68;">Доля вакансий</th>
+                        </tr>
+                      </thead>
+                      <tbody style="border: 2px solid #C03F68; background-color: #FEF7E8;">
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Москва</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.2851</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Санкт-Петербург</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.1040</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Новосибирск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.0248</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Казань</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0221</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Екатеринбург</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.0219</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Алматы</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0211</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Нижний Новгород</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.0202</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Минск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0199</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Краснодар</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.0185</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Ростов-На-Дону</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0180</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Самара</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; ">0.0133</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Воронеж</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0129</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Красноярск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.0117</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Уфа</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0113</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">Пермь</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68;">0.0108</td>
+                        </tr>
+                        <tr style="text-align: center;">
+                          <th style="font-weight: 500; border: 2px solid #C03F68;">Челябинск</th>
+                          <td style="font-weight: 300; border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">0.0103</td>
+                        </tr>
+                      </tbody>
+                    </table>                    
                 </div>
             </div>
             <div>
-                <h2 style="color: rgba(224, 137, 51, 1); font-size: 32px; font-weight: 500; margin: 78px auto 25px 420px">ТОП-20 навыков</h2>
-                <div style="display: flex; justify-content: space-between; height: 1100px; margin-left: 30px; flex-wrap: wrap;">
+                <h2 style="color: rgba(192, 63, 104, 1); margin: 37px auto 22px 64px; font-size: 32px; font-weight: 600;">ТОП-20 навыков</h2>
+                <div style="display: flex; justify-content: space-between; height: 1100px; margin-left: 64px; flex-wrap: wrap;">
                     <img src="{% static 'analytic_for_all/skills_graph_general.png' %}" alt="ТОП-20 навыков" width="700px" height="500px">
                     <div>
-                      <iframe src="{% static 'analytic_for_all/1skills_by_year_general.html' %}" style="border:none; height: 290px; width: 1150px"></iframe>
+                      <table style="border: 2px solid #C03F68; border-collapse: collapse; color: #C03F68; width: 1120px; text-align: center;">
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(241, 169, 183, 0.7);">
+                            <th style="border: 2px solid #C03F68;">Год</th>
+                            <th style="border: 2px solid #C03F68;">SQL</th>
+                            <th style="border: 2px solid #C03F68;">Git</th>
+                            <th style="border: 2px solid #C03F68;">JavaScript</th>
+                            <th style="border: 2px solid #C03F68;">Linux</th>
+                            <th style="border: 2px solid #C03F68;">Python</th>
+                            <th style="border: 2px solid #C03F68;">Java</th>
+                            <th style="border: 2px solid #C03F68;">Английский язык</th>
+                            <th style="border: 2px solid #C03F68;">PostgreSQL</th>
+                            <th style="border: 2px solid #C03F68;">PHP</th>
+                            <th style="border: 2px solid #C03F68;">Управление проектами</th>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: #FEF7E8;">
+                            <td style="border: 2px solid #C03F68;">2015</td>
+                            <td style="border: 2px solid #C03F68;">1983</td>
+                            <td style="border: 2px solid #C03F68;">2947</td>
+                            <td style="border: 2px solid #C03F68;">4128</td>
+                            <td style="border: 2px solid #C03F68;">1755</td>
+                            <td style="border: 2px solid #C03F68;">1028</td>
+                            <td style="border: 2px solid #C03F68;">3064</td>
+                            <td style="border: 2px solid #C03F68;">805</td>
+                            <td style="border: 2px solid #C03F68;">779</td>
+                            <td style="border: 2px solid #C03F68;">2838</td>
+                            <td style="border: 2px solid #C03F68;">1323</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2016</td>
+                            <td style="border: 2px solid #C03F68;">6088</td>
+                            <td style="border: 2px solid #C03F68;">8845</td>
+                            <td style="border: 2px solid #C03F68;">13245</td>
+                            <td style="border: 2px solid #C03F68;">5467</td>
+                            <td style="border: 2px solid #C03F68;">3872</td>
+                            <td style="border: 2px solid #C03F68;">7364</td>
+                            <td style="border: 2px solid #C03F68;">2912</td>
+                            <td style="border: 2px solid #C03F68;">3125</td>
+                            <td style="border: 2px solid #C03F68;">8519</td>
+                            <td style="border: 2px solid #C03F68;">4738</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2017</td>
+                            <td style="border: 2px solid #C03F68;">9149</td>
+                            <td style="border: 2px solid #C03F68;">13775</td>
+                            <td style="border: 2px solid #C03F68;">20934</td>
+                            <td style="border: 2px solid #C03F68;">8443</td>
+                            <td style="border: 2px solid #C03F68;">5497</td>
+                            <td style="border: 2px solid #C03F68;">9278</td>
+                            <td style="border: 2px solid #C03F68;">4485</td>
+                            <td style="border: 2px solid #C03F68;">5061</td>
+                            <td style="border: 2px solid #C03F68;">12625</td>
+                            <td style="border: 2px solid #C03F68;">6197</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2018</td>
+                            <td style="border: 2px solid #C03F68;">15817</td>
+                            <td style="border: 2px solid #C03F68;">22067</td>
+                            <td style="border: 2px solid #C03F68;">29987</td>
+                            <td style="border: 2px solid #C03F68;">13570</td>
+                            <td style="border: 2px solid #C03F68;">10616</td>
+                            <td style="border: 2px solid #C03F68;">14957</td>
+                            <td style="border: 2px solid #C03F68;">7408</td>
+                            <td style="border: 2px solid #C03F68;">8303</td>
+                            <td style="border: 2px solid #C03F68;">17354</td>
+                            <td style="border: 2px solid #C03F68;">9804</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2019</td>
+                            <td style="border: 2px solid #C03F68;">24947</td>
+                            <td style="border: 2px solid #C03F68;">29272</td>
+                            <td style="border: 2px solid #C03F68;">34462</td>
+                            <td style="border: 2px solid #C03F68;">19193</td>
+                            <td style="border: 2px solid #C03F68;">16312</td>
+                            <td style="border: 2px solid #C03F68;">19779</td>
+                            <td style="border: 2px solid #C03F68;">13795</td>
+                            <td style="border: 2px solid #C03F68;">11737</td>
+                            <td style="border: 2px solid #C03F68;">18599</td>
+                            <td style="border: 2px solid #C03F68;">13458</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2020</td>
+                            <td style="border: 2px solid #C03F68;">55673</td>
+                            <td style="border: 2px solid #C03F68;">54175</td>
+                            <td style="border: 2px solid #C03F68;">45601</td>
+                            <td style="border: 2px solid #C03F68;">37073</td>
+                            <td style="border: 2px solid #C03F68;">31482</td>
+                            <td style="border: 2px solid #C03F68;">36247</td>
+                            <td style="border: 2px solid #C03F68;">29816</td>
+                            <td style="border: 2px solid #C03F68;">24264</td>
+                            <td style="border: 2px solid #C03F68;">23335</td>
+                            <td style="border: 2px solid #C03F68;">22827</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2021</td>
+                            <td style="border: 2px solid #C03F68;">99659</td>
+                            <td style="border: 2px solid #C03F68;">91194</td>
+                            <td style="border: 2px solid #C03F68;">67863</td>
+                            <td style="border: 2px solid #C03F68;">59242</td>
+                            <td style="border: 2px solid #C03F68;">57399</td>
+                            <td style="border: 2px solid #C03F68;">52022</td>
+                            <td style="border: 2px solid #C03F68;">66985</td>
+                            <td style="border: 2px solid #C03F68;">39965</td>
+                            <td style="border: 2px solid #C03F68;">34274</td>
+                            <td style="border: 2px solid #C03F68;">43676</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2022</td>
+                            <td style="border: 2px solid #C03F68;">94714</td>
+                            <td style="border: 2px solid #C03F68;">84715</td>
+                            <td style="border: 2px solid #C03F68;">54551</td>
+                            <td style="border: 2px solid #C03F68;">58038</td>
+                            <td style="border: 2px solid #C03F68;">54491</td>
+                            <td style="border: 2px solid #C03F68;">41935</td>
+                            <td style="border: 2px solid #C03F68;">60410</td>
+                            <td style="border: 2px solid #C03F68;">40798</td>
+                            <td style="border: 2px solid #C03F68;">31211</td>
+                            <td style="border: 2px solid #C03F68;">42860</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2023</td>
+                            <td style="border: 2px solid #C03F68;">65111</td>
+                            <td style="border: 2px solid #C03F68;">46796</td>
+                            <td style="border: 2px solid #C03F68;">31575</td>
+                            <td style="border: 2px solid #C03F68;">39299</td>
+                            <td style="border: 2px solid #C03F68;">40385</td>
+                            <td style="border: 2px solid #C03F68;">26007</td>
+                            <td style="border: 2px solid #C03F68;">22349</td>
+                            <td style="border: 2px solid #C03F68;">33873</td>
+                            <td style="border: 2px solid #C03F68;">23535</td>
+                            <td style="border: 2px solid #C03F68;">25133</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2024</td>
+                            <td style="border: 2px solid #C03F68;">51288</td>
+                            <td style="border: 2px solid #C03F68;">28522</td>
+                            <td style="border: 2px solid #C03F68;">20106</td>
+                            <td style="border: 2px solid #C03F68;">27367</td>
+                            <td style="border: 2px solid #C03F68;">30650</td>
+                            <td style="border: 2px solid #C03F68;">19858</td>
+                            <td style="border: 2px solid #C03F68;">12786</td>
+                            <td style="border: 2px solid #C03F68;">25602</td>
+                            <td style="border: 2px solid #C03F68;">13913</td>
+                            <td style="border: 2px solid #C03F68;">10101</td>
+                        </tr>
+                    </table>                    
                     </div>  
                     <div>
-                      <iframe src="{% static 'analytic_for_all/2skills_by_year_general.html' %}" style="border:none; height: 290px; width: 1150px"></iframe>
+                      <table style="border: 2px solid #C03F68; border-collapse: collapse; color: #C03F68; width: 1120px; text-align: center;">
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(241, 169, 183, 0.7);">
+                            <th style="border: 2px solid #C03F68;">Год</th>
+                            <th style="border: 2px solid #C03F68;">HTML</th>
+                            <th style="border: 2px solid #C03F68;">MySQL</th>
+                            <th style="border: 2px solid #C03F68;">CSS</th>
+                            <th style="border: 2px solid #C03F68;">Adobe Photoshop</th>
+                            <th style="border: 2px solid #C03F68;">Работа в команде</th>
+                            <th style="border: 2px solid #C03F68;">ООП</th>
+                            <th style="border: 2px solid #C03F68;">1С программирование</th>
+                            <th style="border: 2px solid #C03F68;">Atlassian Jira</th>
+                            <th style="border: 2px solid #C03F68;">1C: Предприятие 8</th>
+                            <th style="border: 2px solid #C03F68;">HTML5</th>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: #FEF7E8;">
+                            <td style="border: 2px solid #C03F68;">2015</td>
+                            <td style="border: 2px solid #C03F68;">3094</td>
+                            <td style="border: 2px solid #C03F68;">2514</td>
+                            <td style="border: 2px solid #C03F68;">2732</td>
+                            <td style="border: 2px solid #C03F68;">1075</td>
+                            <td style="border: 2px solid #C03F68;">621</td>
+                            <td style="border: 2px solid #C03F68;">3324</td>
+                            <td style="border: 2px solid #C03F68;">621</td>
+                            <td style="border: 2px solid #C03F68;">292</td>
+                            <td style="border: 2px solid #C03F68;">420</td>
+                            <td style="border: 2px solid #C03F68;">3042</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2016</td>
+                            <td style="border: 2px solid #C03F68;">7892</td>
+                            <td style="border: 2px solid #C03F68;">7598</td>
+                            <td style="border: 2px solid #C03F68;">7004</td>
+                            <td style="border: 2px solid #C03F68;">3362</td>
+                            <td style="border: 2px solid #C03F68;">2496</td>
+                            <td style="border: 2px solid #C03F68;">6077</td>
+                            <td style="border: 2px solid #C03F68;">2671</td>
+                            <td style="border: 2px solid #C03F68;">1150</td>
+                            <td style="border: 2px solid #C03F68;">2007</td>
+                            <td style="border: 2px solid #C03F68;">6974</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2017</td>
+                            <td style="border: 2px solid #C03F68;">12179</td>
+                            <td style="border: 2px solid #C03F68;">10797</td>
+                            <td style="border: 2px solid #C03F68;">11404</td>
+                            <td style="border: 2px solid #C03F68;">4389</td>
+                            <td style="border: 2px solid #C03F68;">3317</td>
+                            <td style="border: 2px solid #C03F68;">8686</td>
+                            <td style="border: 2px solid #C03F68;">4162</td>
+                            <td style="border: 2px solid #C03F68;">2198</td>
+                            <td style="border: 2px solid #C03F68;">3281</td>
+                            <td style="border: 2px solid #C03F68;">9131</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2018</td>
+                            <td style="border: 2px solid #C03F68;">18406</td>
+                            <td style="border: 2px solid #C03F68;">15946</td>
+                            <td style="border: 2px solid #C03F68;">17140</td>
+                            <td style="border: 2px solid #C03F68;">5866</td>
+                            <td style="border: 2px solid #C03F68;">5174</td>
+                            <td style="border: 2px solid #C03F68;">10671</td>
+                            <td style="border: 2px solid #C03F68;">6635</td>
+                            <td style="border: 2px solid #C03F68;">3838</td>
+                            <td style="border: 2px solid #C03F68;">5670</td>
+                            <td style="border: 2px solid #C03F68;">12442</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2019</td>
+                            <td style="border: 2px solid #C03F68;">20111</td>
+                            <td style="border: 2px solid #C03F68;">17149</td>
+                            <td style="border: 2px solid #C03F68;">19357</td>
+                            <td style="border: 2px solid #C03F68;">6780</td>
+                            <td style="border: 2px solid #C03F68;">8454</td>
+                            <td style="border: 2px solid #C03F68;">12587</td>
+                            <td style="border: 2px solid #C03F68;">9807</td>
+                            <td style="border: 2px solid #C03F68;">7039</td>
+                            <td style="border: 2px solid #C03F68;">8219</td>
+                            <td style="border: 2px solid #C03F68;">12408</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2020</td>
+                            <td style="border: 2px solid #C03F68;">25139</td>
+                            <td style="border: 2px solid #C03F68;">25069</td>
+                            <td style="border: 2px solid #C03F68;">24759</td>
+                            <td style="border: 2px solid #C03F68;">11571</td>
+                            <td style="border: 2px solid #C03F68;">16562</td>
+                            <td style="border: 2px solid #C03F68;">19843</td>
+                            <td style="border: 2px solid #C03F68;">16280</td>
+                            <td style="border: 2px solid #C03F68;">19841</td>
+                            <td style="border: 2px solid #C03F68;">14723</td>
+                            <td style="border: 2px solid #C03F68;">14994</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2021</td>
+                            <td style="border: 2px solid #C03F68;">35478</td>
+                            <td style="border: 2px solid #C03F68;">34995</td>
+                            <td style="border: 2px solid #C03F68;">33567</td>
+                            <td style="border: 2px solid #C03F68;">31155</td>
+                            <td style="border: 2px solid #C03F68;">37458</td>
+                            <td style="border: 2px solid #C03F68;">30590</td>
+                            <td style="border: 2px solid #C03F68;">25406</td>
+                            <td style="border: 2px solid #C03F68;">35506</td>
+                            <td style="border: 2px solid #C03F68;">23486</td>
+                            <td style="border: 2px solid #C03F68;">21280</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2022</td>
+                            <td style="border: 2px solid #C03F68;">27675</td>
+                            <td style="border: 2px solid #C03F68;">29330</td>
+                            <td style="border: 2px solid #C03F68;">24160</td>
+                            <td style="border: 2px solid #C03F68;">38267</td>
+                            <td style="border: 2px solid #C03F68;">36684</td>
+                            <td style="border: 2px solid #C03F68;">28208</td>
+                            <td style="border: 2px solid #C03F68;">29417</td>
+                            <td style="border: 2px solid #C03F68;">29029</td>
+                            <td style="border: 2px solid #C03F68;">25854</td>
+                            <td style="border: 2px solid #C03F68;">15124</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68;">
+                            <td style="border: 2px solid #C03F68;">2023</td>
+                            <td style="border: 2px solid #C03F68;">17270</td>
+                            <td style="border: 2px solid #C03F68;">19451</td>
+                            <td style="border: 2px solid #C03F68;">14801</td>
+                            <td style="border: 2px solid #C03F68;">27279</td>
+                            <td style="border: 2px solid #C03F68;">23004</td>
+                            <td style="border: 2px solid #C03F68;">14745</td>
+                            <td style="border: 2px solid #C03F68;">24757</td>
+                            <td style="border: 2px solid #C03F68;">14779</td>
+                            <td style="border: 2px solid #C03F68;">19070</td>
+                            <td style="border: 2px solid #C03F68;">8589</td>
+                        </tr>
+                        <tr style="border: 2px solid #C03F68; background-color: rgba(140, 162, 115, 0.3);">
+                            <td style="border: 2px solid #C03F68;">2024</td>
+                            <td style="border: 2px solid #C03F68;">11373</td>
+                            <td style="border: 2px solid #C03F68;">11582</td>
+                            <td style="border: 2px solid #C03F68;">8396</td>
+                            <td style="border: 2px solid #C03F68;">16893</td>
+                            <td style="border: 2px solid #C03F68;">8742</td>
+                            <td style="border: 2px solid #C03F68;">7117</td>
+                            <td style="border: 2px solid #C03F68;">16403</td>
+                            <td style="border: 2px solid #C03F68;">9863</td>
+                            <td style="border: 2px solid #C03F68;">12812</td>
+                            <td style="border: 2px solid #C03F68;">4653</td>
+                        </tr>
+                    </table>
+                    
                     </div>                       
                 </div>
             </div>
         </div> 
     </main>
-      <footer style="background-color: rgba(233, 149, 65, 1); padding: 18px 19px 17px 0px; margin: 0px;">
-        <div style="text-align: end; color: rgba(51, 97, 137, 1)">
-          <div style="font-size: 20px; font-weight: 500;">Яковлева Александра Витальевна</div>
-          <div style="font-size: 20px; font-weight: 500;">Группа: РИ-230931</div>
-        </div>
-      </footer>
+    <footer style="background-color: rgba(241, 169, 183, 1); padding: 18px 19px 17px 0px; margin: 0px;">
+      <div style="text-align: end; color: rgba(192, 63, 104, 1)">
+        <div style="font-size: 20px; font-weight: 500;">Яковлева Александра Витальевна</div>
+        <div style="font-size: 20px; font-weight: 500;">Группа: РИ-230931</div>
+      </div>
+    </footer>
     </div>
   </div>
 </body>
